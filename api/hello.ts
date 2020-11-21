@@ -1,15 +1,15 @@
 import { NowRequest, NowResponse } from '@vercel/node';
 
-const {
-    MONGO_PASSWORD,
-} = process.env;
+// const {
+//     MONGO_PASSWORD,
+// } = process.env;
 
 
-function penis({ hi }) {
+function helloo({ hi }) {
     console.log(hi);
 }
 
 export default async function (req: NowRequest, res: NowResponse) {
     return res.send('ily');
-    connect('mongob', process.env.MONGO_PASSWORD)
+    // connect('mongob', process.env.MONGO_PASSWORD)
 };  
