@@ -6,14 +6,14 @@
 
     <!-- display mobile menu bar as alt-->
 
-    <div v-for="index in rightNav" :key="index">
+    <div v-for="index in rightNav" :key="index.i">
       <button
         class="link"
         :class="{ activeButton: path === index.route }"
         @click="route(index.route)"
       >
-        <span id="accentNum"> {{ index.accentNum }} </span>
-        <span id="title"> {{ index.title }} </span>
+        <span class="textSecondary--text" id="accentNum"> {{ index.accentNum }} </span>
+        <span class="textPrimary--text" id="title"> {{ index.title }} </span>
       </button>
     </div>
   </v-app-bar>
@@ -25,10 +25,10 @@ export default {
 
   data: () => ({
     rightNav: [
-      { accentNum: "01", title: "About", route: '/about' },
-      { accentNum: "02", title: "Experience", route: '/experience' },
-      { accentNum: "03", title: "Work", route: '/work'},
-      { accentNum: "04", title: "Contact", route: '/contact' },
+      { accentNum: "01.", title: "About", route: '/about' },
+      { accentNum: "02.", title: "Experience", route: '/experience' },
+      { accentNum: "03.", title: "Work", route: '/work'},
+      { accentNum: "04.", title: "Contact", route: '/contact' },
     ],
   }),
   methods: {
