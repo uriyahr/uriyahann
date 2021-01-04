@@ -8,19 +8,23 @@
     <NavBar></NavBar>
 
     <v-main>
-      <HelloWorld />
+      <Landing/>
     </v-main>
+    <!-- <v-content transition="slide-x-transition">
+      <router-view>
+    </router-view>
+    </v-content> -->
   </v-app>
 </template>
 
 <script>
-import NavBar from "./components/NavBar";
-import HelloWorld from "./components/HelloWorld";
+import NavBar from './components/NavBar';
+import Landing from './views/Landing'
 export default {
   name: "App",
   components: {
-    HelloWorld,
     NavBar,
+    Landing,
   },
   data: () => ({
     overlay: false,

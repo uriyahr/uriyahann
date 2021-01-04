@@ -35,8 +35,7 @@
         small
         :ripple="false"
         id="resume-button"
-        :class="{ activeButton: path === '/resume'}"
-        @click="route('/resume')"
+        @click="readFile()"
         outlined
         color="textSecondary"
       >
@@ -64,6 +63,10 @@ export default {
         this.$router.push(path);
       }
     },
+    readFile() {
+      console.log("opening pdf...");
+      window.open('resume.pdf', '_blank');
+    },
   },
   computed: {
     path() {
@@ -75,7 +78,11 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap");
-
+.v-app-bar {
+  padding-top: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
 #accentNum {
   margin-right: -5px !important;
   color: #64ffda;
