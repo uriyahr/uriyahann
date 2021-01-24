@@ -10,6 +10,7 @@
           'ml-n16': $vuetify.breakpoint.mdAndUp,
         }"
         @click="route('/')"
+        :ripple="false"
         contain
         height="35"
         width="35"
@@ -39,6 +40,7 @@
       <v-btn
         small
         :ripple="false"
+      
         id="resume-button"
         @click="readFile()"
         outlined
@@ -93,9 +95,10 @@ export default {
   color: #64ffda;
 }
 
-#nav-logo {
+span.v-btn__content:hover {
   /* margin-left: -400px !important; */
   /* margin-bottom:10px;  */
+  transition-property: none !important;
 }
 
 .right-nav {
@@ -115,13 +118,21 @@ span.button-hover:hover span {
   color: #ccd6f6;
 }
 
+
 .v-btn:not(.v-btn--round).v-size--small[data-v-4295d220] {
   padding: 15px;
   font-size: 11px;
   font-weight: 400;
 }
+/* .v-btn:not(.v-btn--round).v-size--small[data-v-4295d220]:hover {
+  opacity: 0 !important;
+  transition-property: none !important;
+}
+
 
 .v-ripple__container:active {
   opacity: 0 !important;
-}
+  
+} */
+
 </style>
