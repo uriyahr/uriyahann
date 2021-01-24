@@ -1,18 +1,23 @@
 <template>
-  <v-app-bar app color="transparent" elevation="0" hide-on-scroll>
+  <v-app-bar app color="transparent" elevation="0" height="60" hide-on-scroll>
     <!-- insert icon here -->
-    <v-img
-      :src="require('../assets/circled-u.svg')"
-      :class="{ activeButton: path === '/',
-               'ml-auto': $vuetify.breakpoint.smAndDown, 
-               'ml-n16': $vuetify.breakpoint.mdAndUp}"
-      @click="route('/')"
-      contain
-      height="42"
-      width="42"
-      id="nav-logo">
-      
-    </v-img>
+    <v-app-bar-nav-icon>
+      <v-img
+        :src="require('../assets/circled-u.svg')"
+        :class="{
+          activeButton: path === '/',
+          'ml-auto': $vuetify.breakpoint.smAndDown,
+          'ml-n16': $vuetify.breakpoint.mdAndUp,
+        }"
+        @click="route('/')"
+        contain
+        height="35"
+        width="35"
+        id="nav-logo"
+      >
+      </v-img>
+    </v-app-bar-nav-icon>
+
     <v-spacer />
 
     <!-- display mobile menu bar alt-->
@@ -21,12 +26,12 @@
       <button
         class="right-nav"
         :class="{ activeButton: path === index.route }"
-        @click="route(index.route)">
-          <span class="button-hover">
-            <span id="accentNum"> {{ index.accentNum }} </span>
-            <span id="title"> {{ index.title }} </span>
-          </span>
-          
+        @click="route(index.route)"
+      >
+        <span class="button-hover">
+          <span id="accentNum"> {{ index.accentNum }} </span>
+          <span id="title"> {{ index.title }} </span>
+        </span>
       </button>
     </div>
 
@@ -41,7 +46,7 @@
       >
         Resume
       </v-btn>
-    </div> 
+    </div>
   </v-app-bar>
 </template>
 
@@ -65,7 +70,7 @@ export default {
     },
     readFile() {
       console.log("opening pdf...");
-      window.open('resume.pdf', '_blank');
+      window.open("resume.pdf", "_blank");
     },
   },
   computed: {
@@ -79,7 +84,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap");
 .v-app-bar {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-right: 50px;
   padding-left: 50px;
 }
@@ -89,7 +94,8 @@ export default {
 }
 
 #nav-logo {
-  margin-left: -400px !important;
+  /* margin-left: -400px !important; */
+  /* margin-bottom:10px;  */
 }
 
 .right-nav {
@@ -100,7 +106,7 @@ export default {
   font-weight: 400;
 }
 
-span.button-hover:hover span{
+span.button-hover:hover span {
   color: #64ffda !important;
 }
 
@@ -110,15 +116,12 @@ span.button-hover:hover span{
 }
 
 .v-btn:not(.v-btn--round).v-size--small[data-v-4295d220] {
-  padding: 18px; 
+  padding: 15px;
   font-size: 11px;
-  font-weight: 400; 
+  font-weight: 400;
 }
 
 .v-ripple__container:active {
   opacity: 0 !important;
 }
-
-
-
 </style>
